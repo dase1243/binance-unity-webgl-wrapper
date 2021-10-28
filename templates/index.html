@@ -64,13 +64,20 @@
 
     let userEmail;
 
-    window.addEventListener('*', (event) => {
-        alert(`Received message: ${event.data}`);
-        userEmail = event.data;
-    }, {once: true});
+    window.addEventListener("message", (event) => console.log("index 67: ", event.data), false);
 
 
-    window.addEventListener("message", (event) => console.log(event.data), {once: true});
+    function receiveMessage(event)
+    {
+        console.log("index 72: ", event.data)
+        // Do we trust the sender of this message?  (might be
+        // different from what we originally opened, for example).
+
+        // event.source is popup
+        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
+    }
+    window.addEventListener("message", receiveMessage, false);
+
 
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
