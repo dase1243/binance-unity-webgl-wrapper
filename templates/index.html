@@ -70,8 +70,7 @@
     }, {once: true});
 
 
-    window.addEventListener("message", (event) => alert("Received message " + event.data), {once: true});
-
+    window.addEventListener("message", (event) => console.log(event.data), {once: true});
 
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
