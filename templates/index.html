@@ -69,6 +69,10 @@
         userEmail = event.data;
     }, {once: true});
 
+
+    window.addEventListener("message", (event) => alert("Received message " + event.data), {once: true});
+
+
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
