@@ -73,8 +73,7 @@
             progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
             loadingBar.style.display = "none";
-            const email = localStorage.getItem('userEmail');
-            unityInstance.SendMessage("Manager", "ShowEmail", email)
+            unityInstance.SendMessage("Manager", "ShowEmail", userEmail)
         }).catch((message) => {
             alert(message);
         });
