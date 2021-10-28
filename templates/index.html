@@ -66,7 +66,7 @@
 
     function receiveMessage(event) {
         console.log("index 68: ", event.origin)
-        if (event.origin === "https://infinite-heroes.herokuapp.com/") {
+        if (event.origin.includes("localhost:3000")) {
             console.log("index 72: ", event.data)
             userEmail = event.data
         }
