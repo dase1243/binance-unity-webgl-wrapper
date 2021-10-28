@@ -61,6 +61,15 @@
 
     var script = document.createElement("script");
     script.src = loaderUrl;
+
+    let userEmail;
+    window.onmessage = function (e) {
+        if (e.origin === 'userEmail') {
+            alert('It works!');
+            userEmail = e.data;
+        }
+    };
+
     script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
