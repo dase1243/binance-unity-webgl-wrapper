@@ -82,7 +82,7 @@
         }).then(async (unityInstance) => {
             loadingBar.style.display = "none";
             if (!userEmail || userEmail === '')
-                await sleep(1500);
+                await sleep(500);
             unityInstance.SendMessage("Manager", "ShowEmail", userEmail)
         }).catch((message) => {
             alert(message);
