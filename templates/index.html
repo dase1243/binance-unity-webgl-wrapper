@@ -65,17 +65,9 @@
     let userEmail = '';
 
     function receiveMessage(event) {
-        console.log("index 68: ", event.origin)
-        console.log("index 69: ", event)
-        if (event.origin.includes("localhost:3000")) {
-            console.log("index 71: ", event.data)
+        if (event.origin.includes("localhost:3000") || event.origin.includes("binance-hack-frontend.herokuapp.com")) {
             userEmail = event.data
         }
-        // Do we trust the sender of this message?  (might be
-        // different from what we originally opened, for example).
-
-        // event.source is popup
-        // event.data is "hi there yourself!  the secret response is: rheeeeet!"
     }
 
     function sleep(ms) {
