@@ -67,6 +67,7 @@
 
     function receiveMessage(event) {
         if (event.origin.includes("localhost:3000") || event.origin.includes("binance-hack-frontend.herokuapp.com")) {
+            console.log('iframe child, webGL unity. event.data: ', event.data)
             userEmail = event.data
         }
     }
